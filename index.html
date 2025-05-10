@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday Mom!</title>
+  <title>Happy Mother's Day!</title>
   <style>
     body {
       margin: 0;
@@ -21,16 +21,6 @@
       align-items: center;
       overflow: hidden;
       position: relative;
-      animation: backgroundMove 20s infinite linear;
-    }
-
-    @keyframes backgroundMove {
-      0% {
-        background-position: center bottom, top left, center;
-      }
-      100% {
-        background-position: left bottom, top right, center;
-      }
     }
 
     .card {
@@ -40,7 +30,6 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       text-align: center;
       z-index: 2;
-      animation: fadeIn 2s ease-in-out;
     }
 
     h1 {
@@ -55,110 +44,6 @@
       margin-top: 5px;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-
-    .heart {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: pink;
-      transform: rotate(45deg);
-      animation: float 8s infinite ease-in;
-    }
-
-    .heart::before,
-    .heart::after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: pink;
-      border-radius: 50%;
-    }
-
-    .heart::before {
-      top: -10px;
-      left: 0;
-    }
-
-    .heart::after {
-      left: -10px;
-      top: 0;
-    }
-
-    @keyframes float {
-      0% {
-        bottom: 0;
-        opacity: 1;
-        transform: translateX(0) rotate(45deg);
-      }
-      100% {
-        bottom: 100vh;
-        opacity: 0;
-        transform: translateX(50px) rotate(45deg);
-      }
-    }
-    .star {
-      position: absolute;
-      width: 15px;
-      height: 15px;
-      background-color: #ff1493;
-      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-      animation: starFloat 6s infinite ease-in-out;
-    }
-
-    @keyframes starFloat {
-      0% {
-        top: 0;
-        opacity: 1;
-        transform: scale(1) rotate(0);
-      }
-      50% {
-        top: 100vh;
-        opacity: 0.5;
-        transform: scale(1.5) rotate(180deg);
-      }
-      100% {
-        top: 0;
-        opacity: 1;
-        transform: scale(1) rotate(360deg);
-      }
-    }
-
-
-    .flower {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      background-color: #ffb6c1;
-      border-radius: 50%;
-      animation: flowerFloat 10s infinite ease-in-out;
-    }
-
-    @keyframes flowerFloat {
-      0% {
-        top: 0;
-        opacity: 1;
-        transform: scale(1);
-      }
-      100% {
-        top: 100vh;
-        opacity: 0;
-        transform: scale(1.5);
-      }
-    }
-
-
     .button {
       background-color: #ff69b4;
       border: none;
@@ -168,85 +53,120 @@
       border-radius: 10px;
       cursor: pointer;
       margin-top: 20px;
+      transition: background-color 0.3s;
     }
 
     .button:hover {
       background-color: #ff1493;
     }
 
-
     .confetti-message {
-      font-size: 3em;
-      color:#3b0922;
+      font-size: 1.3em;
+      color: #3b0922;
       font-weight: bold;
       text-align: center;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
       opacity: 0;
       transition: opacity 1s;
       z-index: 10;
+      max-width: 90%;
+      background: rgba(255,255,255,0.9);
+      padding: 20px;
+      border-radius: 10px;
     }
 
     .confetti-show {
       opacity: 1;
     }
 
+    .flower {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: radial-gradient(circle at center, #ffb6c1, #ff69b4);
+      border-radius: 50%;
+      animation: floatUp 4s linear forwards;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-300px) scale(1.5);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
 
-
-
-
-  <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
-  <div class="heart" style="left: 30%; animation-delay: 2s;"></div>
-  <div class="heart" style="left: 50%; animation-delay: 4s;"></div>
-  <div class="heart" style="left: 70%; animation-delay: 1s;"></div>
-  <div class="heart" style="left: 90%; animation-delay: 3s;"></div>
-
-
-  <div class="star" style="top: 5%; left: 20%; animation-delay: 0s;"></div>
-  <div class="star" style="top: 15%; left: 40%; animation-delay: 2s;"></div>
-  <div class="star" style="top: 25%; left: 60%; animation-delay: 4s;"></div>
-  <div class="star" style="top: 35%; left: 80%; animation-delay: 6s;"></div>
-
-
-  <div class="flower" style="left: 15%; animation-delay: 0s;"></div>
-  <div class="flower" style="left: 35%; animation-delay: 2s;"></div>
-  <div class="flower" style="left: 55%; animation-delay: 4s;"></div>
-  <div class="flower" style="left: 75%; animation-delay: 6s;"></div>
-
   <div class="card">
-    <h1>Happy Birthday Mom! 🎉</h1>
+    <h1>Happy Mother's Day! 💐</h1>
     <p>I love you, Mom! ❤️</p>
     <p><strong>From: Winnie C.</strong></p>
-    <hr style="margin: 20px 0;">
-    <p style="font-size: 1.4em; color: #ff69b4;">母亲节快乐 💐</p>
-
-    <button class="button" onclick="triggerConfetti()">PRESS!!!</button>
-
-    <div id="confettiMessage" class="confetti-message">Love you more than words can say. Happy Mother’s Day!</div>
+    <p style="font-size: 1.4em; color: #ff69b4;">You’re the heart of our home 💖</p>
+    <button class="button" onclick="triggerCelebration()">PRESS!!!</button>
+    <div id="confettiMessage" class="confetti-message">
+      Words will never be enough to thank you for everything you’ve done for me. Your love, strength, and unwavering support have shaped me into who I am today. You mean the world to me.
+    </div>
   </div>
 
+  <!-- Confetti JS -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
   <script>
-    function triggerConfetti() {
+    function triggerCelebration() {
+      // Confetti explosion
       confetti({
-        particleCount: 150,
-        spread: 70,
+        particleCount: 200,
+        spread: 90,
         origin: { x: 0.5, y: 0.5 },
+        startVelocity: 45,
         colors: ['#ff69b4', '#ff1493', '#ffb6c1', '#ff6347']
       });
 
-      const confettiMessage = document.getElementById('confettiMessage');
-      confettiMessage.classList.add('confetti-show');
+      // Small bursts for 2s
+      const duration = 2000;
+      const end = Date.now() + duration;
 
+      const interval = setInterval(() => {
+        if (Date.now() > end) {
+          clearInterval(interval);
+        }
+        confetti({
+          particleCount: 10,
+          spread: 360,
+          origin: { x: Math.random(), y: Math.random() * 0.5 },
+          colors: ['#ff69b4', '#ff1493', '#ffb6c1', '#ff6347']
+        });
+      }, 200);
+
+      // Show message
+      const message = document.getElementById('confettiMessage');
+      message.classList.add('confetti-show');
       setTimeout(() => {
-        confettiMessage.classList.remove('confetti-show');
-      }, 3000);
+        message.classList.remove('confetti-show');
+      }, 6000);
+
+      // Launch floating flowers
+      for (let i = 0; i < 15; i++) {
+        const flower = document.createElement('div');
+        flower.className = 'flower';
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.bottom = '0px';
+        document.body.appendChild(flower);
+
+        setTimeout(() => {
+          flower.remove();
+        }, 4000);
+      }
     }
   </script>
-
 </body>
 </html>

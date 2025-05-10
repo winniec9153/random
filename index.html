@@ -21,6 +21,7 @@
       align-items: center;
       overflow: hidden;
       position: relative;
+      flex-direction: column;
     }
 
     .card {
@@ -102,6 +103,41 @@
         opacity: 0;
       }
     }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+      .card {
+        width: 90%;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1.1em;
+      }
+
+      .button {
+        font-size: 1.2em;
+        padding: 12px 20px;
+      }
+
+      .confetti-message {
+        top: auto;
+        bottom: 110px;
+        font-size: 1.1em;
+        padding: 15px;
+        max-width: 95%;
+      }
+
+      .flower {
+        width: 20px;
+        height: 20px;
+        animation-duration: 3s;
+      }
+    }
   </style>
 </head>
 <body>
@@ -131,14 +167,11 @@
         colors: ['#ff69b4', '#ff1493', '#ffb6c1', '#ff6347']
       });
 
-      // Small bursts for 2s
+      // Small bursts
       const duration = 2000;
       const end = Date.now() + duration;
-
       const interval = setInterval(() => {
-        if (Date.now() > end) {
-          clearInterval(interval);
-        }
+        if (Date.now() > end) clearInterval(interval);
         confetti({
           particleCount: 100,
           spread: 360,
@@ -154,7 +187,7 @@
         message.classList.remove('confetti-show');
       }, 6000);
 
-      // Launch floating flowers
+      // Floating flowers
       for (let i = 0; i < 15; i++) {
         const flower = document.createElement('div');
         flower.className = 'flower';

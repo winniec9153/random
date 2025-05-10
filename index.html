@@ -124,7 +124,7 @@
     function triggerCelebration() {
       // Confetti explosion
       confetti({
-        particleCount: 200,
+        particleCount: 1000,
         spread: 90,
         origin: { x: 0.5, y: 0.5 },
         startVelocity: 45,
@@ -140,7 +140,7 @@
           clearInterval(interval);
         }
         confetti({
-          particleCount: 10,
+          particleCount: 100,
           spread: 360,
           origin: { x: Math.random(), y: Math.random() * 0.5 },
           colors: ['#ff69b4', '#ff1493', '#ffb6c1', '#ff6347']
